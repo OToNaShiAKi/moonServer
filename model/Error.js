@@ -15,4 +15,8 @@ module.exports = {
     status: 1003,
     message: "未登陆不可操作",
   },
+  ImageWrong: {
+    status: 1003,
+    message: "传图失败",
+  },
 };

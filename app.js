@@ -10,10 +10,10 @@ const redis = require("koa-redis");
 const { config } = require("./config/Redis");
 
 const user = require("./routes/user");
+const picture = require("./routes/picture");
 
 const { AllowCrossOrigin, Certification } = require("./config/Intercept");
 app.use(AllowCrossOrigin);
-app.use(Certification);
 
 // error handler
 onerror(app);
@@ -46,9 +46,11 @@ app.use(
     store: redis({ all: `${config.host}:${config.port}` }),
   })
 );
+app.use(Certification);
 
 // routes
 app.use(user.routes(), user.allowedMethods());
+app.use(picture.routes(), picture.allowedMethods());
 
 // error-handling
 app.on("error", (err, ctx) => {
