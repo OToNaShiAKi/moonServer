@@ -8,6 +8,7 @@ exports.FindRank = async (id) => {
   lists = lists.sort((a, b) => b.likes.length - a.likes.length);
   for (let index = 0; index < lists.length; index++)
     if (lists[index].id == id) return index + 1;
+  return lists.length;
 };
 
 exports.FindUser = async (filter) => {
@@ -23,6 +24,7 @@ exports.CreateUser = async (info) => {
   info.id = md5("S&T-" + info.nick + "-" + Date.now());
   const user = await User.create(info);
   user.dataValues.rank = await this.FindRank(user.dataValues.id);
+  user.dataValues.pictures = 0;
   return user.dataValues;
 };
 

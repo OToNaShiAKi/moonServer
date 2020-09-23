@@ -1,6 +1,7 @@
 const { connect, connection, disconnect } = require("mongoose");
-// const Mongo = "mongodb://root:hustmathskexie@hustmaths.top:27017/vinci?authSource=admin"
-const Mongo = "mongodb://localhost:27017/moon";
+const Mongo = "mongodb://root:hustmathskexie@localhost:27017/moon?authSource=admin"
+// const Mongo = "mongodb://localhost:27017/moon";
+
 
 connect(Mongo, { useNewUrlParser: true, useUnifiedTopology: true });
 

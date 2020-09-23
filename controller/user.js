@@ -31,8 +31,7 @@ exports.Info = async (info) => {
     [Op.and]: {
       [Op.or]: [
         { telphone: info.telphone },
-        { uid: info.uid },
-        { name: info.name },
+        { uid: info.uid }
       ],
       id: { [Op.ne]: info.id },
     },

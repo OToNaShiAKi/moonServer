@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 const MySQL = {
   database: "hustmaths",
-  username: "root",
-  password: "",
+  username: "hustmaths",
+  password: "hustmathskexie",
   config: {
     host: "localhost",
     port: 3306,
