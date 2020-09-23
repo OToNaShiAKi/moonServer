@@ -15,8 +15,8 @@ module.exports = {
     status: 1003,
     message: "未登陆不可操作",
   },
-  ImageWrong: {
-    status: 1003,
-    message: "传图失败",
+  TrueWrong: {
+    status: 1004,
+    message: "只有实名认证后才可点赞哦",
   },
 };

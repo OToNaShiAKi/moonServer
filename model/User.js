@@ -34,6 +34,9 @@ const User = sequelize.define(
     pictures: {
       type: INTEGER,
     },
+    /* rank: {
+      type: INTEGER,
+    }, */
   },
   {
     freezeTableName: true, // 告诉sequelize不需要自动将表名变成复数

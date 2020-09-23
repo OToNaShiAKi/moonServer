@@ -7,6 +7,10 @@ const schema = new Schema({
     type: String,
     required: true,
   },
+  nick: {
+    type: String,
+    required: true,
+  },
   lists: {
     type: Array,
     required: true,
@@ -17,12 +21,12 @@ const schema = new Schema({
     default: Date.now(),
   },
   likes: {
-    type: Number,
-    default: 0,
+    type: Array,
+    default: [],
   },
   comments: {
-    type: String,
-    default: 0,
+    type: Array,
+    default: [],
   },
 });
 

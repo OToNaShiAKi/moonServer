@@ -41,7 +41,7 @@ app.use(
     cookie: {
       path: "/",
       httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000 * 30,
     },
     store: redis({ all: `${config.host}:${config.port}` }),
   })

@@ -5,18 +5,15 @@ const AllowCrossOrigin = async (ctx, next) => {
   ctx.set("Access-Control-Allow-Headers", "Content-Type");
   ctx.set("Access-Control-Allow-Methods", " POST, GET, OPTIONS");
   ctx.set("Access-Control-Allow-Credentials", true);
-  if (ctx.method.toUpperCase() == "OPTIONS") {
-    ctx.body = 200;
-  } else {
-    await next();
-  }
+  if (ctx.method.toUpperCase() == "OPTIONS") ctx.body = 200;
+  else await next();
 };
 
 const Certification = async (ctx, next) => {
-  const url = ["/user/account", "/picture/lists"];
-  if ((ctx.session && ctx.session.user.id) || url.includes(ctx.request.url)) {
-    await next();
-  } else ctx.body = AuthWrong;
+  const allow = ["/user/account", "/picture/cards"];
+  const url = ctx.request.url.split("?")[0];
+  if ((ctx.session && ctx.session.user) || allow.includes(url)) await next();
+  else ctx.body = AuthWrong;
 };
 
 exports.AllowCrossOrigin = AllowCrossOrigin;
