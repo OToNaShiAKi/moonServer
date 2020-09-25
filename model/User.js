@@ -1,4 +1,4 @@
-const { STRING, INTEGER } = require("sequelize");
+const { STRING, INTEGER, BOOLEAN } = require("sequelize");
 
 const sequelize = require("./../config/MySQL");
 
@@ -34,9 +34,15 @@ const User = sequelize.define(
     pictures: {
       type: INTEGER,
     },
-    /* rank: {
-      type: INTEGER,
-    }, */
+    onecho: {
+      type: BOOLEAN,
+    },
+    media: {
+      type: BOOLEAN,
+    },
+    office: {
+      type: BOOLEAN,
+    },
   },
   {
     freezeTableName: true, // 告诉sequelize不需要自动将表名变成复数
