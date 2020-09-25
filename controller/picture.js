@@ -4,7 +4,7 @@ const ErrorCode = require("./../model/Error");
 
 const path = require("path");
 const fs = require("fs");
-const uploadDir = path.resolve(__dirname, './../../../../wwwroot/hustmaths/moon/uploads/')
+const uploadDir = path.resolve(__dirname, './../../../../wwwroot/hustmaths/moon/upload/')
 
 exports.Upload = async (req, { id, nick }) => {
   const form = formidable({ multiples: true, uploadDir, keepExtensions: true });

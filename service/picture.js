@@ -2,6 +2,7 @@ const Picture = require("./../model/Picture");
 const User = require("./../model/User");
 
 exports.SavePicture = async (form) => {
+  form.upTime = new Date();
   const card = new Picture(form).save();
   User.increment("pictures", { where: { id: form.id } });
   return card;

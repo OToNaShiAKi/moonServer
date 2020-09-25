@@ -8,7 +8,7 @@ exports.FindRank = async (id) => {
   lists = lists.sort((a, b) => b.likes.length - a.likes.length);
   for (let index = 0; index < lists.length; index++)
     if (lists[index].id == id) return index + 1;
-  return lists.length;
+  return lists.length + 1;
 };
 
 exports.FindUser = async (filter) => {

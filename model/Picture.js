@@ -18,7 +18,7 @@ const schema = new Schema({
   text: String,
   upTime: {
     type: Date,
-    default: Date.now(),
+    default: new Date(),
   },
   likes: {
     type: Array,
